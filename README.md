@@ -17,10 +17,15 @@ Pipelines
 # To install Jenkins in Ubuntu server follow the below commands:-
 
 sudo apt update
+
 sudo apt search openjdk
+
 sudo apt update
+
 sudo apt search openjdk
+
 sudo apt install openjdk-11-jdk
+
 java –version
 
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
