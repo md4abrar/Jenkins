@@ -37,13 +37,17 @@ apt update -y
  
 apt install jenkins -y
 
-#Linux /RHEL
+# Linux /RHEL
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
 sudo yum install epel-release
+
+#If epel release is failed make sure to install it before proceeding
+
+#Make sure java 11 is installed by running java --version
 
 sudo yum install java-11-openjdk-devel
 
@@ -78,18 +82,21 @@ The command: sudo cat /var/lib/jenkins/secrets/initialAdminPassword will print t
 
 
 
-What is Jenkins?
+# What is Jenkins?
 Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 
-How Jenkins works
+# How Jenkins works
+
 Jenkins runs as a server on a variety of platforms including Windows, MacOS, Unix variants and especially, Linux. To operate Jenkins, pipelines are created. A pipeline is a series of steps the Jenkins server will take to perform the required tasks of the CI/CD process. These are stored in a plain text Jenkinsfile. The Jenkinsfile uses a curly bracket syntax that looks similar to JSON. Steps in the pipeline are declared as commands with parameters and encapsulated in curly brackets. The Jenkins server then reads the Jenkinsfile and executes its commands, pushing the code down the pipeline from committed source code to production runtime. A Jenkinsfile can be created through a GUI or by writing code directly.
-Plugins
+
+# Plugins
 A plugin is an enhancement to the Jenkins system. They help extend Jenkins capabilities and integrated Jenkins with other software. Plugins can be downloaded from the online Jenkins Plugin repository and loaded using the Jenkins Web UI or CLI. Plugins help to integrate other developer tools into the Jenkins environment, add new user interface elements to the Jenkins Web UI, help with administration of Jenkins, and enhance Jenkins for build and source code management. One of the more common uses of plugins is to provide integration points for CI/CD sources and destinations.
-Security
+
+# Security
 Jenkins security revolves around securing the server and the user. Server security is achieved in the same way any other server is secured. Access to where it resides, such as a VM or bare metal server, is configured to allow for the fewest number of processes to communicate with the server. This is accomplished through typical server OS and networking security features. 
 Jenkins also supports security for its internal user database. These features are accessed via the Jenkins Web UI. Jenkins supports two security realms: the Security Realm and the Authorization Realm. The Security Realm allows an operator to decide who has access to Jenkins and the Authorization Realm determines what they can do with that access.
 
-Managing Jenkins
+# Managing Jenkins
 Most standard administrative tasks can be performed from the screens in the Manage Jenkins section of the dashboard.
 Discover, Install and Manage Plugins
 Jenkins has hundreds of useful plugins. Plugins will eliminate the need to create custom scripting to solve common problems with minimal pain. Just remember plugins change often and become fragile. Minimize your plugin usage if possible.
@@ -100,6 +107,7 @@ Steps
  
 3.	Select "Download now and install after restart" at the bottom of the page.
 4.	After Jenkins finishes restarting, the installed plugins will appear under Manage Plugins > Installed (Tab)
+
 Here are a few Jenkins plugin recommendations:
 •	Git - allows you to integrate GitHub to clone repository
 •	GitHub Pull Request Builder - builds pull requests in GitHub and reports results
@@ -111,7 +119,7 @@ Here are a few Jenkins plugin recommendations:
 
 
 
-Configure Global Settings
+# Configure Global Settings
 Straight out of the box Jenkins will allow anyone to run anything as a user of Jenkins along with admin permissions, which is bad. I suggest enabling Lightweight Directory Access Protocol (LDAP), wich allows you to use corporate service. Users can log into Jenkins with their usual company login credentials.
 Steps
 1.	Navigate to Jenkins Web Interface > Login as Admin > Manage Jenkins > Configure Global Security
@@ -129,7 +137,7 @@ Steps
 
 
 
-Global Tool Configuration
+# Global Tool Configuration
 On the Jenkins dashboard, select manage Jenkins, and then global tool configuration. On this page, you can configure Jenkins to manage several tools, including Java, Git, Maven and more.
 
 1.	Global Tool Configuration
@@ -174,7 +182,7 @@ Set the following properties:
  
 
 
-What is Jenkins URL?
+# What is Jenkins URL?
 This option, by default, depicts the HTTP address of Jenkins installation in the form of localhost i.e. http://localhost:8080/jenkins/. We can write DNS (Domain Name) of our machine or overwrite the localhost with the IP address of the machine. This value lets Jenkins know how to refer to itself, i.e. to display images or to create links in emails.  
 
 What are the Environment variables in Jenkins?
