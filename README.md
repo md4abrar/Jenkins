@@ -40,14 +40,19 @@ apt install jenkins -y
 #Linux /RHEL
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
 sudo yum install epel-release
+
 sudo yum install java-11-openjdk-devel
+
 sudo yum install Jenkins
 
 if you face difficulty installing epel release then follow below instructions
+
 vim /etc/yum.repos.d/epelfordaemonize.repo
+
 [daemonize]
 baseurl=https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/
 gpgcheck=no
