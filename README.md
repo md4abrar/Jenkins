@@ -47,7 +47,9 @@ Contributions to this roadmap are welcome! If you have any suggestions for impro
 Here are some useful resources to supplement your learning:
 
 [Jenkins Documentation](https://www.jenkins.io/doc/)
+
 [Jenkins User Forum](https://groups.google.com/g/jenkinsci-users)
+
 [Jenkins YouTube Channel](https://www.youtube.com/user/JenkinsCI)
 
 ### License
